@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.eventList {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #f5f5f5;
+}
+
+.eventList h1 {
+    margin-bottom: 40px;
+}
+
+.eventGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.eventCard {
+    padding: 25px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.eventCard h2 {
+    margin-bottom: 15px;
+}
+
+.eventCard p {
+    margin: 8px 0;
+}
