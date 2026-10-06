@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "../styles/EventDetailsUI.css";
 
 function EventDetailsUI({ event, onClose }) {
@@ -16,6 +15,7 @@ function EventDetailsUI({ event, onClose }) {
                 <p><strong>Date:</strong> {event.date}</p>
                 <p><strong>Location:</strong> {event.location}</p>
 
+                <button className="registerButton">Register</button>
             </div>
         </div>
     );
