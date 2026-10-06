@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import EventDetailsUI from "./EventDetailsUI";
 import "../styles/EventList.css";
 
-function EventListUI() {
+function EventList() {
     const [events, setEvents] = useState([]);
+    const [selectedEvent, setSelectedEvent] = useState(null);
 
     const eventsTest = [
         {
@@ -35,7 +37,6 @@ function EventListUI() {
         },
     ];
 
-
     useEffect(() => {
         setEvents(eventsTest);
     }, []);
@@ -46,7 +47,7 @@ function EventListUI() {
 
             <div className="eventGrid">
                 {events.map((event) => (
-                    <div className="eventCard" key={event.id}>
+                    <div className="eventCard" key={event.id} onClick={() => setSelectedEvent(event)}>
                         <h2>{event.title}</h2>
                         <p>{event.description}</p>
                         <p>Date: {event.date}</p>
@@ -54,8 +55,10 @@ function EventListUI() {
                     </div>
                 ))}
             </div>
+
+            <EventDetailsUI event={selectedEvent} onClose={() => setSelectedEvent(null)} />
         </div>
     );
 }
 
-export default EventListUI;
+export default EventList;

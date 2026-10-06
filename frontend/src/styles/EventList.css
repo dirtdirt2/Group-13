@@ -29,6 +29,13 @@ body {
     border: 1px solid #ddd;
     border-radius: 10px;
     box-sizing: border-box;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.eventCard:hover {
+    transform: translateY(-5px);
+    border: solid 1px rgb(121, 215, 255);
 }
 
 .eventCard h2 {
