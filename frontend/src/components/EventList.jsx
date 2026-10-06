@@ -5,6 +5,7 @@ import "../styles/EventList.css";
 function EventList() {
     const [events, setEvents] = useState([]);
     const [selectedEvent, setSelectedEvent] = useState(null);
+    const [search, setSearch] = useState("");
 
     const eventsTest = [
         {
@@ -41,12 +42,25 @@ function EventList() {
         setEvents(eventsTest);
     }, []);
 
+    const filteredEvents = events.filter((event) =>
+        event.title.toLowerCase().includes(search.toLowerCase())
+    );
+
     return (
         <div className="eventList">
-            <h1>Events</h1>
+            <div className="eventHeader">
+                <h1>Events</h1>
+
+                <input
+                    type="text"
+                    placeholder="Search events..."
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                />
+            </div>
 
             <div className="eventGrid">
-                {events.map((event) => (
+                {filteredEvents.map((event) => (
                     <div className="eventCard" key={event.id} onClick={() => setSelectedEvent(event)}>
                         <h2>{event.title}</h2>
                         <p>{event.description}</p>

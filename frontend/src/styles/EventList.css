@@ -45,3 +45,28 @@ body {
 .eventCard p {
     margin: 8px 0;
 }
+
+.eventHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.eventHeader h1 {
+    margin: 0;
+}
+
+.eventHeader input {
+    width: 300px;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.eventHeader input:focus {
+    outline: none;
+    border-color: #555;
+}
